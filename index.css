@@ -8,38 +8,42 @@
   src: url(./RobotoMono-VariableFont_wght.ttf);
 }
 
-html {
+body {
   font-family: RobotoMono;
 }
 
 section {
-  margin: 0 auto;
+  margin: 0 auto; /* üst alt = 0, sağ sol = auto */
   width: 80%;
 }
 
 nav {
-  display: block;
-  padding-top: 10px;
+  /* display: block; nav zaten block olduğu için yazmana gerek yok */
+
   width: 100%;
   text-align: center;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 1rem 0 2rem 0;
 }
 
 nav a {
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-
   border-radius: 10px;
   color: white;
-  padding: 20px;
-  margin-left: 4%;
+  text-decoration: none; /* linkten dolayı gelen alt çizgiyi siler */
+  padding: 1rem 2rem; /* üst sağ alt sol */
+  /*margin-left: 4%;
   margin-right: 4%;
-  margin-bottom: 10px;
+  margin-bottom: 10px;*/ /*margin verince ekrana çakılı oluyor. float vermek daha iyi*/
 }
 
 a:first-child {
   background: #ff764e;
   border: 1px solid #ff764e;
+  float: left;
 }
 
 a:nth-child(2) {
@@ -50,11 +54,13 @@ a:nth-child(2) {
 a:last-child {
   background: #ffcd69;
   border: 1px solid #ffcd69;
+  float: right;
 }
 
 #head-title {
-  margin-top: 100px;
+  margin-top: 4rem;
   display: block;
+  max-width: 1300px;
 }
 
 #head-title img {
@@ -62,8 +68,10 @@ a:last-child {
   border: 1px solid white;
   border-radius: 50%;
   margin: 0 auto;
-  height: 400px;
-  width: 400px;
+  aspect-ratio: 1/1;
+  width: 300px;
+  object-fit: cover;
+  object-position: left;
 }
 
 #title {
@@ -71,7 +79,7 @@ a:last-child {
   text-align: center;
   width: auto;
   box-sizing: border-box;
-  padding: 10vw;
+  padding: 8vw;
   line-height: 2;
   vertical-align: top;
 }
@@ -87,6 +95,7 @@ h1 {
   color: white;
   line-height: 1.4;
   text-align: center;
+  margin-top: 2rem;
   margin-bottom: 30px;
 }
 
@@ -103,7 +112,8 @@ h1 {
   width: 7em;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2vh;
+  margin-top: 2%;
+  margin-bottom: 1%;
 }
 
 .bold {
@@ -111,8 +121,8 @@ h1 {
 }
 
 .content p {
-  padding-left: 30vw;
-  padding-right: 30vw;
+  padding-left: 28vw;
+  padding-right: 28vw;
   line-height: 1.4;
   text-align: center;
 }
@@ -125,14 +135,24 @@ footer img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  object-position: 50% 0%;
+  object-position: top; /* yüzde değil top da yazabiliyoruz */
 }
 
-footer nav {
+footer {
   background: #f9e7dc;
 }
 
-a:hover {
+a:first-child:hover {
   background: white;
-  color: black;
+  color: #ff764e;
+}
+
+a:nth-child(2):hover {
+  background: white;
+  color: #5ed3eb;
+}
+
+a:last-child:hover {
+  background: white;
+  color: #ffcd69;
 }
